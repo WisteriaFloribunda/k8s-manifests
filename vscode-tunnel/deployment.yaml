@@ -6,6 +6,8 @@ spec:
   selector:
     matchLabels:
       editor: vscode
+    strategy:
+      type: Recreate
   replicas: 1
   template:
     metadata:
