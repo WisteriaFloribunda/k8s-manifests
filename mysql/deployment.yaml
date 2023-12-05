@@ -36,24 +36,6 @@ spec:
           limits:
             cpu: 3
             memory: 3Gi
-      - name: phpmyadmin
-        image: phpmyadmin/phpmyadmin
-        env:
-        - name: PMA_HOST
-          value: mysql-server
-        - name: PMA_PORT
-          value: "3306"
-        - name: PMA_ARBITRARY
-          value: "1"
-        - name: PMA_PASSWORD
-          value: root
-        ports:
-            - containerPort: 80
-              name: phpmyadmin
-        resources:
-          limits:
-            cpu: 3
-            memory: 3Gi
       volumes:
         - name: data
           persistentVolumeClaim:

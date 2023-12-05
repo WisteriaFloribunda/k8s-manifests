@@ -15,4 +15,4 @@ spec:
       protocol: TCP
   selector:
     app: mysql
-  loadBalancerIP: 192.168.1.80
+  loadBalancerIP: 192.168.1.100
