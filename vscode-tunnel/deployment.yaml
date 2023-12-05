@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: vscode
 spec:
+  selector:
+    matchLabels:
+      editor: vscode
   replicas: 1
   template:
     metadata:
