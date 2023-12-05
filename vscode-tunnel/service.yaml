@@ -5,9 +5,10 @@ metadata:
   labels:
     run: vscode
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
+    targetPort: 8080
   selector:
     run: vscode
