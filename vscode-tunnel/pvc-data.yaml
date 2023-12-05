@@ -6,7 +6,7 @@ metadata:
     volume.beta.kubernetes.io/persistent-volume: vscode-data-pv
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 10Gi

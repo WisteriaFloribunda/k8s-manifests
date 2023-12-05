@@ -20,17 +20,17 @@ spec:
             privileged: true
         volumeMounts:
          - mountPath: /home/workspace
-           name: vscode-data-pvc
+           name: data
          - mountPath: /root
-           name: vscode-pl-pvc
+           name: root
         resources:
           limits:
             cpu: 3
             memory: 6Gi
       volumes:
-        - name: vscode-data-pvc
+        - name: data
           persistentVolumeClaim:
             claimName: vscode-data-pvc
-        - name: vscode-pl-pvc
+        - name: root
           persistentVolumeClaim:
             claimName: vscode-pl-pvc
