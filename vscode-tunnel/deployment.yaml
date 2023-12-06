@@ -19,15 +19,3 @@ spec:
         image: ghcr.io/wisteriafloribunda/vscode-tunnel
         securityContext:
             privileged: true
-        volumeMounts:
-          - mountPath: /home/workspace
-            name: data
-          - mountPath: /root
-            name: pldata
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: vscode-data-pvc
-        - name: pldata
-          persistentVolumeClaim:
-            claimName: vscode-pl-pvc
