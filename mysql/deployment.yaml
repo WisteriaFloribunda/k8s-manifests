@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      editor: mysql
+      run: mysql
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        editor: mysql
+        run: mysql
     spec:
       containers:
       - name: mysql
@@ -31,7 +31,6 @@ spec:
            name: initdb
         ports:
             - containerPort: 3306
-              name: mysql  
         resources:
           limits:
             cpu: 3
@@ -45,7 +44,6 @@ spec:
           value: "3306"
         ports:
         - containerPort: 80
-          name: phpmyadmin
         resources:
           limits:
             cpu: 1

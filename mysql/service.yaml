@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-server
+  labels:
+    run: mysql
 spec:
   type: LoadBalancer
   ports:
@@ -10,9 +12,9 @@ spec:
       targetPort: 3306
       protocol: TCP
     - name: phpmyadmin
-      port: 8080
+      port: 80
       targetPort: 80
       protocol: TCP
   selector:
-    app: mysql
+    run: mysql
   loadBalancerIP: 192.168.1.100
