@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: vscode
+      run: vscode
   strategy:
     type: Recreate
   replicas: 1
   template:
     metadata:
       labels:
-        app: vscode
+        run: vscode
     spec:
       containers:
       - name: vscode
