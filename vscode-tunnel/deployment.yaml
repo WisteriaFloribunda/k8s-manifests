@@ -30,4 +30,4 @@ spec:
             claimName: vscode-data-pvc
         - name: rot
           persistentVolumeClaim:
-            claimName: vscode-pl-pv
+            claimName: vscode-pl-pvc
