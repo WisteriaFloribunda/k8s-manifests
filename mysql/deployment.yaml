@@ -39,7 +39,7 @@ spec:
         image: phpmyadmin/phpmyadmin
         env:
         - name: PMA_HOST
-          value: "localhost"
+          value: "127.0.0.1"
         - name: PMA_ARBITRARY
           value: "1"
         - name: PMA_USER
