@@ -6,8 +6,8 @@ spec:
   selector:
     matchLabels:
       editor: vscode
-    strategy:
-      type: Recreate
+  strategy:
+    type: Recreate
   replicas: 1
   template:
     metadata:
@@ -21,8 +21,10 @@ spec:
         securityContext:
             privileged: true
         volumeMounts:
-         - mountPath: /home/workspace
-           name: data
+          - mountPath: /home/workspace
+            name: data
+          - mountPath: /root
+            name: pl
         resources:
           limits:
             cpu: 3
@@ -31,3 +33,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: vscode-data-pvc
+        - name: pl
+          persistentVolumeClaim:
+            claimName: vscode-pl-pvc

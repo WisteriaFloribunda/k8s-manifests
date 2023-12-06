@@ -11,8 +11,8 @@ spec:
     metadata:
       labels:
         editor: mysql
-    strategy:
-      type: Recreate
+  strategy:
+    type: Recreate
     spec:
       containers:
       - name: mysql
