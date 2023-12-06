@@ -39,13 +39,13 @@ spec:
         image: phpmyadmin/phpmyadmin
         env:
         - name: PMA_HOST
-          value: localhost
+          value: "localhost"
         - name: PMA_ARBITRARY
-          value: 1
+          value: "1"
         - name: PMA_USER
-          value: root
+          value: "root"
         - name: PMA_PASSWORD
-          value: root
+          value: "root"
         ports:
         - containerPort: 80
         resources:
