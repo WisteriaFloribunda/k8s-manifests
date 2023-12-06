@@ -6,9 +6,9 @@ spec:
   selector:
     matchLabels:
       run: vscode
+  replicas: 1
   strategy:
     type: Recreate
-  replicas: 1
   template:
     metadata:
       labels:
@@ -17,22 +17,17 @@ spec:
       containers:
       - name: vscode
         image: ghcr.io/wisteriafloribunda/vscode-tunnel
-        workingDir: /home/workspace
         securityContext:
             privileged: true
         volumeMounts:
           - mountPath: /home/workspace
             name: data
           - mountPath: /root
-            name: pl
-        resources:
-          limits:
-            cpu: 3
-            memory: 6Gi
+            name: pldata
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: vscode-data-pvc
-        - name: pl
+        - name: pldata
           persistentVolumeClaim:
             claimName: vscode-pl-pvc
