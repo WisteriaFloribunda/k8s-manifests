@@ -7,12 +7,12 @@ spec:
     matchLabels:
       editor: mysql
   replicas: 1
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         editor: mysql
-    strategy:
-      type: Recreate
     spec:
       containers:
       - name: mysql
